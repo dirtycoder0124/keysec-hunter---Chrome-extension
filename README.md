@@ -34,7 +34,8 @@ Displays **all URLs that contain query parameters**, helping you discover intere
 <img width="892" height="693" alt="image" src="https://github.com/user-attachments/assets/817d6934-5c8f-453b-b3fc-6db20bb0be47" />
 ## ⚙️ Settings Tab
 Customize your scan by adding **keywords** you want to search across the website, choose **max links**, and set your **notification mode**.
-<img width="892" height="693" alt="KeySec Hunter Settings tab" src="https://github.com/user-attachments/assets/817d6934-5c8f-453b-b3fc-6db20bb0be47" />
+<img width="893" height="711" alt="image" src="https://github.com/user-attachments/assets/17794c68-f84c-4925-9997-8cbdeec6053f" />
+
 
 ## 📁 Project Structure
 keysec-hunter/
