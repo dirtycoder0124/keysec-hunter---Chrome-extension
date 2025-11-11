@@ -29,10 +29,17 @@ It’s built for security researchers, developers, and bug bounty hunters who wa
 
 📁 Project Structure
 keysec-hunter/
+
 ├── manifest.json
+
 ├── background.js
+
 ├── popup.html
+
 ├── popup.js
+
 ├── styles.css
+
 ├── regax.txt          # secret regex list (You can add your favourite regax in this file)
+
 └── icons/
