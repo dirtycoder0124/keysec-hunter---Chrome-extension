@@ -1,0 +1,319 @@
+/* ===== Global Styling ===== */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+  padding: 15px;
+  width: 700px;
+  height: auto;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+h2 {
+  margin-top: 0;
+  text-align: center;
+  color: #1b1b1b;
+  font-size: 1.4em;
+}
+
+input, select {
+  width: 100%;
+  margin-top: 5px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 0.95em;
+  box-sizing: border-box;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: #1DA1F2;
+  box-shadow: 0 0 5px rgba(29,161,242,0.5);
+}
+
+button {
+  width: 100%;
+  margin-top: 10px;
+  padding: 8px;
+  background-color: #1DA1F2;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.95em;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #0d8ddb;
+}
+
+#status {
+  margin-top: 10px;
+  font-size: 0.9em;
+  text-align: center;
+}
+
+#status.success {
+  color: green;
+}
+
+#status.error {
+  color: red;
+}
+
+/* ===== Tabs ===== */
+.tabs {
+  display: flex;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+
+.tab {
+  padding: 8px 15px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  border-bottom: none;
+  background: #f1f1f1;
+  margin-right: 5px;
+  border-radius: 6px 6px 0 0;
+  transition: all 0.2s ease;
+}
+
+.tab:hover {
+  background: #e7f3ff;
+}
+
+.tab.active {
+  background: #fff;
+  font-weight: bold;
+  border-bottom: 1px solid #fff;
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+/* ===== Home Grid Layout ===== */
+.home-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.column-box {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 12px;
+  overflow-y: auto;
+  max-height: 420px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+}
+
+.column-box h3 {
+  margin-top: 0;
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 6px;
+  color: #222;
+  font-size: 1.05em;
+}
+
+/* ===== Toggle Switch ===== */
+.toggle-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.site-label {
+  margin-left: 10px;
+  font-size: 0.95em;
+  font-weight: 500;
+  color: #333;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+  margin-right: 10px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 24px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #1DA1F2;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+/* ===== Results (Found Keywords) ===== */
+#results {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.result-card {
+  background: #ffffff;
+  border: 1px solid #e1e4e8;
+  border-radius: 8px;
+  padding: 10px 12px;
+  margin-bottom: 10px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  font-size: 14px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  word-wrap: break-word;
+}
+
+.result-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 3px 6px rgba(0,0,0,0.12);
+}
+
+.result-card b {
+  color: #d6336c;
+}
+
+.result-card a {
+  color: #0077cc;
+  text-decoration: none;
+  font-weight: 500;
+  word-break: break-word;
+}
+
+.result-card a:hover {
+  text-decoration: underline;
+}
+
+.result-card code {
+  display: block;
+  background-color: #f4f6f7;
+  padding: 4px 6px;
+  border-radius: 4px;
+  margin-top: 4px;
+  font-size: 0.85em;
+  color: #495057;
+}
+
+/* ===== Secrets Found Section ===== */
+#secretResults, #homeSecrets {
+  margin-top: 10px;
+  font-size: 14px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.secret-item {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  padding: 8px 10px;
+  border-left: 4px solid #ff4d4d;
+  border-radius: 6px;
+  margin-bottom: 8px;
+  font-family: monospace;
+  word-wrap: break-word;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+.secret-item b {
+  color: #c0392b;
+}
+
+.secret-item code {
+  background: #fdf0f0;
+  border: 1px solid #f1cccc;
+  border-radius: 6px;
+  padding: 5px 8px;
+  display: block;
+  margin: 5px 0;
+  color: #d32f2f;
+  font-size: 13px;
+}
+
+/* ===== Links with Parameters ===== */
+#linksWithParams {
+  margin-top: 12px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+#linksWithParams ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#linksWithParams li {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  padding: 8px 10px;
+  border-radius: 6px;
+  margin-bottom: 8px;
+  font-size: 13.5px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+#linksWithParams li:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 3px 6px rgba(0,0,0,0.12);
+}
+
+#linksWithParams a {
+  color: #1DA1F2;
+  font-weight: 500;
+  text-decoration: none;
+  word-break: break-word;
+}
+
+#linksWithParams a:hover {
+  text-decoration: underline;
+}
+
+/* ===== Misc ===== */
+#twitterHandle {
+  display: block;
+  margin-top: 15px;
+  text-align: center;
+  font-size: 0.9em;
+  color: #555;
+}

@@ -1,0 +1,22 @@
+{
+  "Slack Token": "xox[pboa]-[0-9]{12}-[0-9]{12}-[0-9]{12}-[a-z0-9]{32}",
+  "Google API Key": "AIza[0-9A-Za-z\\-_]{35}",
+  "RSA private key": "-----BEGIN RSA PRIVATE KEY-----",
+  "SSH (DSA) private key": "-----BEGIN DSA PRIVATE KEY-----",
+  "SSH (EC) private key": "-----BEGIN EC PRIVATE KEY-----",
+  "PGP private key block": "-----BEGIN PGP PRIVATE KEY BLOCK-----",
+  "Amazon MWS Auth Token": "amzn\\.mws\\.[0-9a-f\\-]{36}",
+  "AWS AppSync GraphQL Key": "da2-[a-z0-9]{26}",
+  "Facebook Access Token": "EAACEdEose0cBA[0-9A-Za-z]+",
+  "GitHub Token": "[gG][iI][tT][hH][uU][bB].{0,20}['|\"][0-9a-zA-Z]{35,40}['|\"]",
+  "Google Service Account": "\"type\":\\s*\"service_account\"",
+  "Heroku API Key": "[hH][eE][rR][oO][kK][uU].{0,20}[0-9A-Fa-f\\-]{36}",
+  "JWT": "eyJhbGciOiJ[a-zA-Z0-9_-]{5,}\\.[a-zA-Z0-9_-]+\\.[a-zA-Z0-9_-]+",
+  "MailChimp API Key": "[0-9a-f]{32}-us[0-9]{1,2}",
+  "Slack Webhook": "https://hooks\\.slack\\.com/services/[A-Za-z0-9_/]{24,}",
+  "Stripe Key": "(sk|rk)_live_[0-9a-zA-Z]{24}",
+  "Telegram Bot Token": "[0-9]+:AA[0-9A-Za-z\\-_]{33}",
+  "Twilio API Key": "SK[0-9a-fA-F]{32}",
+  "Generic API Key": "[aA][pP][iI]_?[kK][eE][yY].{0,20}['|\"][0-9a-zA-Z]{32,45}['|\"]",
+  "Generic Secret": "[sS][eE][cC][rR][eE][tT].{0,20}['|\"][0-9a-zA-Z]{32,45}['|\"]"
+}

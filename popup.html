@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>KeySec Hunter</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      width: 700px;
+      height: auto;
+      font-family: Arial, sans-serif;
+      overflow-x: hidden;
+    }
+
+    .tabs {
+      display: flex;
+      border-bottom: 1px solid #ccc;
+      margin-bottom: 10px;
+    }
+
+    .tab {
+      padding: 8px 15px;
+      cursor: pointer;
+      border: 1px solid #ccc;
+      border-bottom: none;
+      background: #f1f1f1;
+      margin-right: 5px;
+    }
+
+    .tab.active {
+      background: #fff;
+      font-weight: bold;
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    .home-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+
+    .column-box {
+      background: #fafafa;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 10px;
+      overflow-y: auto;
+      max-height: 400px;
+    }
+
+    .column-box h3 {
+      margin-top: 0;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 5px;
+    }
+
+    .toggle-container {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 50px;
+      height: 24px;
+      margin-right: 10px;
+    }
+
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      transition: 0.4s;
+      border-radius: 24px;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 18px;
+      width: 18px;
+      left: 3px;
+      bottom: 3px;
+      background-color: white;
+      transition: 0.4s;
+      border-radius: 50%;
+    }
+
+    input:checked + .slider {
+      background-color: #4CAF50;
+    }
+
+    input:checked + .slider:before {
+      transform: translateX(26px);
+    }
+
+    #linksWithParams ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    #linksWithParams li {
+      margin-bottom: 8px;
+      font-size: 14px;
+      word-break: break-all;
+    }
+
+    #linksWithParams a {
+      color: #0073e6;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    #linksWithParams a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      margin-top: 15px;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    footer a {
+      color: #0073e6;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <!-- Tabs -->
+  <div class="tabs">
+    <div class="tab active" data-tab="home">Home</div>  
+    <div class="tab" data-tab="params">All Parameter Links</div>
+    <div class="tab" data-tab="settings">Settings</div>
+  </div>
+
+  <!-- Home Content -->
+  <div id="home" class="tab-content active">
+    <div class="toggle-container">
+      <label class="switch">
+        <input type="checkbox" id="siteToggle">
+        <span class="slider round"></span>
+      </label>
+      <span id="siteLabel" class="site-label"></span>
+    </div>
+
+    <div class="home-grid">
+      <!-- Left Column -->
+      <div class="column-box">
+        <h3>Found Keyword Links</h3>
+        <div id="results">Loading...</div>
+      </div>
+
+      <!-- Right Column -->
+      <div class="column-box">
+        <h3>Secrets Found</h3>
+        <div id="homeSecrets">Loading...</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Settings Content -->
+  <div id="settings" class="tab-content">
+    <h2>KeySec Hunter - Settings</h2>
+
+    <label>Add Keywords (comma separated):</label><br>
+    <input type="text" id="keywords" placeholder="e.g. password, token"><br><br>
+
+    <label>Max Links to Scan:</label><br>
+    <select id="maxLinks">
+      <option value="10">10</option>
+      <option value="20">20</option>
+      <option value="30">30</option>
+      <option value="all">All Internal Links</option>
+    </select><br><br>
+
+    <label>Notification Mode:</label><br>
+    <select id="notifyMode">
+      <option value="notification">Chrome Notification</option>
+      <option value="alert">Page Alert</option>
+      <option value="disabled">Disabled</option>
+    </select><br><br>
+
+    <button id="save">Save Settings</button>
+    <p id="status"></p>
+
+    <hr>
+    <button id="showKeywords">Show Saved Keywords</button>
+    <div id="keywordsList"></div>
+
+    <hr>
+    <button id="clearAll">Clear All Found Links</button>
+  </div>
+
+  <!-- All Parameter Links -->
+  <div id="params" class="tab-content">
+    <h2>All Parameter Links</h2>
+    <div id="linksWithParams">Loading...</div>
+  </div>
+
+  <footer>
+    <p><strong>KeySec Hunter</strong> - built by 
+      <a href="https://x.com/dirtycoder0124" target="_blank">@dirtycoder0124</a>
+    </p>
+  </footer>
+
+  <script src="popup.js"></script>
+</body>
+</html>
